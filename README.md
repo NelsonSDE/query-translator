@@ -17,7 +17,7 @@ This project provides a robust API service built with NestJS that handles query 
 
 ## Prerequisites
 
-- Node.js (v16 or higher)
+- Node.js 20
 - npm or yarn package manager
 
 ## Installation
@@ -25,7 +25,7 @@ This project provides a robust API service built with NestJS that handles query 
 1. Clone the repository:
 
 ```bash
-git clone [repository-url]
+git clone git@github.com:NelsonSDE/query-translator.git
 cd query-translator
 ```
 
@@ -61,9 +61,6 @@ The project uses Jest for testing. You can run different types of tests using th
 ```bash
 # Unit tests
 npm run test
-
-# e2e tests
-npm run test:e2e
 
 # Test coverage
 npm run test:cov
