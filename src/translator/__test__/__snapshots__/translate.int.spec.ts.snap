@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`TranslateController (e2e) POST /translate should return 400 for empty query 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "query should not be empty",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`TranslateController (e2e) POST /translate should return 400 for invalid source language 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "source must be one of the following values: mongodb, sql",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`TranslateController (e2e) POST /translate should return 400 for invalid target language 1`] = `
+{
+  "error": "Bad Request",
+  "message": [
+    "target must be one of the following values: mongodb, sql",
+  ],
+  "statusCode": 400,
+}
+`;
+
+exports[`TranslateController (e2e) POST /translate should thow a 422 when translating SQL query to MongoDB 1`] = `
+{
+  "message": "Not supported operation: SQL to MongoDB",
+  "statusCode": 422,
+}
+`;
+
+exports[`TranslateController (e2e) POST /translate should translate MongoDB query to SQL 1`] = `
+{
+  "originalQuery": "db.users.find({age: {$gt: 18}});",
+  "source": "mongodb",
+  "target": "sql",
+  "translatedQuery": "SELECT * FROM users WHERE $gt > 'age';",
+}
+`;
